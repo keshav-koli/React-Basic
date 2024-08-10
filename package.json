@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "name": "react_basic",
+  "version": "1.0.0",
+  "description": "this is a basic react app",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "keshav",
+  "license": "ISC",
+  "browerslist": [
+    "last 2 version"
+  ]
+}
