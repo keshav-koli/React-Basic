@@ -1,3 +1,24 @@
+// * Parcel Feature
+// ! Created A Server
+// ? File Watcher Algorithm -c++
+// ! HMR - HOT MODULE REPLACEMENT
+// * Bundling
+// ! MINIFY
+// ? CLEANING OUR CODE
+// ! Dev abd Production Build
+// * Super fast build algorithm
+// * Caching while development
+// ? Image Optimization
+// * Compression
+// ! HTTPS on dev
+// ? port Number
+// * Zero config
+// ?Tree Shaking -Removing un-wanted
+
+
+
+
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { jsx } from "react/jsx-runtime";
