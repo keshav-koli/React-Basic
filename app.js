@@ -53,8 +53,10 @@ const feel=6789;
 const HeadingComponent2 = () => {
   return <div id="container">
     {jsxheading}
-    {feel}
-    <HeadingComponent />
+    {feel} 
+    {console.log("hello world")}
+    <HeadingComponent /> 
+    {HeadingComponent()}
     <h1 className="functionalcomponent2">
       Namaste React functional component 2
     </h1>
