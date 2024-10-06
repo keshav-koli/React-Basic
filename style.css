@@ -34,7 +34,7 @@
     font-weight: 100;
     background-color: #f0f0f0;
     padding: 5px;
-    height: 500px;
+    /* height: 500px; */
     width:250px;
     padding: 5px;
     border-radius: 5px;
@@ -43,9 +43,12 @@
     margin: 10px;
 }
 
-.res-details{
+.res-details {
     padding: 5px;
     margin: 10px;
+    word-wrap: break-word; /* Allow long words to be broken and wrap onto the next line */
+    overflow: hidden; /* Hide any content that overflows the container */
+    text-overflow: ellipsis; /* Add ellipsis (...) to indicate that the text has been truncated */
 }
 .res-image{
     margin: 5px;
