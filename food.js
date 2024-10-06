@@ -39,15 +39,16 @@ const Header = () => {
 };
 
 const ResturantContainer = (props) => {
-  console.log(props);
+  // Destructuring of the object
+  const {resCard,location}=props
   return (
     <div className="resCard">
         <img className="res-image" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/5/25/0a676151-c806-4c05-8ce9-28449df7a455_884067%20SS.jpg" />
       <div className="res-details">
         <h3>Blue Water Grille</h3>
         <p id="rating"><img src={star} alt="rating" className="star-image"></img>4.3 • 35-40 mins</p>
-        <p>{props.resCard}</p>
-        <p>{props.location}</p>
+        <p>{resCard}</p>
+        <p>{location}</p>
       </div>
     </div>
   );
