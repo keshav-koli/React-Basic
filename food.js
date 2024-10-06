@@ -28,10 +28,9 @@ const Header = () => {
       </div>
       <div className="Nav-Item">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Help</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -1771,9 +1770,8 @@ const ResturantContainer = (props) => {
           <img src={star} alt="rating" className="star-image"></img>{resObj.info.avgRating} • {resObj.info.sla.deliveryTime}
            mins
         </p>
-        <p></p>
         <p>{resObj.info.locality}</p>
-        <p>{resObj.info.cuisines.join(',')}</p>
+        <p className="cuisines">{resObj.info.cuisines.join(',')}</p>
         <p>{resObj.info.costForTwo}</p>
       </div>
     </div>
@@ -1793,11 +1791,18 @@ const Body = () => {
     </div>
   );
 };
+const Footer = () => (
+  <div className="footer">
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </div>
+);
 const AppLayout = () => {
   return (
     <>
       <Header />
       <Body />
+      <Footer/>
     </>
   );
 };
