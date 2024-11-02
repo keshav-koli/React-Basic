@@ -1,8 +1,7 @@
-import { food_imageCDN } from "../utils/constant";
+import  food_imageCDN  from "../utils/constant";
 import star from "../../item/star.png";
 const ResturantContainer = (props) => {
   // Destructuring of the object
-  console.log(props);
   const { resObj } = props;
   const { cloudinaryImageId, name, avgRating, locality, cuisines, costForTwo } =
     resObj?.info;
