@@ -1,6 +1,6 @@
 const Footer = () => (
     <div className="footer">
-      <p>&copy; 2023 Your Company. All rights reserved.</p>
+      <p>&copy; 2023 CuisineFood . All rights reserved.</p>
       <p>
         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
       </p>
