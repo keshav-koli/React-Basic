@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { navbar_logo } from "../utils/constant";
 
 const Header = () => {
+  var [change ,setchange]=useState("Login");
+
     return (
       <div className="header">
         <div className="logo-container">
@@ -20,6 +23,21 @@ const Header = () => {
             <li>
               <a href="#">Contact</a>
             </li>
+            <li>
+              <a href="#">Services</a>
+              </li>
+              <li>
+                <button onClick={
+                  () => {
+                    if(change==="Login"){
+                      setchange("Logout")
+                    }
+                    else{
+                      setchange("Login")
+                    }
+                  }
+                }  className="login-btn">{change}</button>
+              </li>
           </ul>
         </div>
       </div>

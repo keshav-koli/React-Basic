@@ -18,7 +18,7 @@
 .logo {
   width: 180px;
 }
-
+/* *===========================NAVBAR================================*/
 .Nav-Item {
   padding: 20px;
   margin: 20px;
@@ -44,7 +44,14 @@
   color: #d7852d;
 }
 
-/* Restaurant Card Styles */
+.login-btn{
+  background-color: #d7852d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* *===================Restaurant Card Styles=================================== */
 .resCard:hover {
   border: 1px solid black;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -62,7 +69,7 @@
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  margin: 10px;
+  margin:1rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -108,10 +115,10 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  /* justify-content:flex-start; */
 }
 
-/* Footer Styles */
+/* *================Footer Styles=========================================== */
 .footer {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -130,11 +137,40 @@
 .footer a:hover {
   color: #d7852d;
 }
+
+/* *============================================================= */
 .filter-btn {
-  margin: 10px;
-  padding: 10px;
-  background-color: #d7852d;
+    background-color: #d7852d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
 }
+.filter{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.filter div{
+  margin: 1rem;
+}
+.search-input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d7852d;
+  width: 300px;
+  margin-right: 1rem;
+}
+.search-btn{
+  background-color: #d7852d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* *========================Shimmer UI============================= */
 .shimer-container {
     display: flex;
     margin-left: 20px;
@@ -148,3 +184,4 @@
     height: 400px;
     background-color: #C2C2C2;
 }
+
