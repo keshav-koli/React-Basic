@@ -6,6 +6,8 @@ import Shimer from "./shimer";
 const Body = () => {
   // whenever state variable updates ,react trigger the reconcilation  (re-render the component)
   let [listRestaurantCard, setlistRestaurantcard] = useState([]);
+  let [filterRestaurantCard, setfilterRestaurantcard] = useState([]);
+
   const [search, setSearch] = useState("");
   useEffect(() => {
     fetch_data();
@@ -18,6 +20,9 @@ const Body = () => {
     );
     const json = await data.json();
     setlistRestaurantcard(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilterRestaurantcard(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(json);
@@ -42,23 +47,19 @@ const Body = () => {
           ></input>
           <button className="search-btn"
           onClick={(e)=>{
-            {
             let filter_restaurant1 = listRestaurantCard.filter(
               (res) => res.info.name.toLowerCase().includes(search.toLowerCase())
             );
-            setlistRestaurantcard(filter_restaurant1);
-            }
+            setfilterRestaurantcard(filter_restaurant1);
           }}
           > search</button>
         </div>
         <button
           onClick={() => {
-            {
-              let filter_restaurant = listRestaurantCard.filter(
-                (resturant) => resturant.info.avgRating > 4.0
+              const filter_restaurant = listRestaurantCard.filter(
+                (resturant) => resturant.info.avgRating > 4.5
               );
-              setlistRestaurantcard(filter_restaurant);
-            }
+              setfilterRestaurantcard(filter_restaurant);
           }}
           className="filter-btn"
         >
@@ -66,7 +67,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listRestaurantCard.map((resturant) => (
+        {filterRestaurantCard.map((resturant) => (
           <ResturantContainer resObj={resturant} key={resturant.info.id} />
         ))}
       </div>
