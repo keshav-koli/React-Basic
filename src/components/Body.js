@@ -1,14 +1,18 @@
 import ResturantContainer from "./ResturantContainer";
 // import { resList } from "../utils/MockData";//no need of this
 import { useEffect, useState } from "react";
-import Shimer from "./shimer";
+import Shimer from "./Shimer";
 
 const Body = () => {
   // whenever state variable updates ,react trigger the reconcilation  (re-render the component)
   let [listRestaurantCard, setlistRestaurantcard] = useState([]);
   let [filterRestaurantCard, setfilterRestaurantcard] = useState([]);
+  // * Use UseState at top of the component
+  // * don't use UseState hook inside loop or conditional statement or function
 
   const [search, setSearch] = useState("");
+
+
   useEffect(() => {
     fetch_data();
   }, []);
@@ -18,9 +22,10 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
-    const json = await data.json();
+    const json = await data.json(); 
     setlistRestaurantcard(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      
     );
     setfilterRestaurantcard(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants

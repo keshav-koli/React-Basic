@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navbar_logo } from "../utils/constant";
 
 const Header = () => {
   var [change ,setchange]=useState("Login");
+    // ^if no dependency array  is provided, the effect will run after every render
+    // ^if dependency array is provided, the effect will run only when the dependency changes
+    // ^if dependency array is empty, the effect will run only once after the first render
+    useEffect(()=>{
+      console.log("hello");
+    },[change]);
+
+
 
     return (
       <div className="header">

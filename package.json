@@ -7,7 +7,6 @@
   "version": "1.0.0",
   "description": "this is a basic react app",
   "devDependencies": {
-    "parcel": "^2.12.0",
     "process": "^0.11.10"
   },
   "scripts": {
