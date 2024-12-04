@@ -5,22 +5,7 @@ import Header from "./src/components/Header";
 import Body from "./src/components/Body";
 // import  { createBrowserRouter, RouterProvider } from 'react-router-dom'
 // import { createBrowserRouter } from "react-router-dom";
-/*
-*Header
-logo
-navbar
 
-?Body
-search
-resturant container
-resturant card
-
-!Footer
-link
-address
-copyright
-
-*/
 const AppLayout = () => {
   return (
     <>
