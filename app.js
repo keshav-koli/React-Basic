@@ -1,69 +1,37 @@
-// * Parcel Feature
-// ! Created A Server
-// ? File Watcher Algorithm -c++
-// ! HMR - HOT MODULE REPLACEMENT
-// * Bundling
-// ! MINIFY
-// ? CLEANING OUR CODE
-// ! Dev abd Production Build
-// * Super fast build algorithm
-// * Caching while development
-// ? Image Optimization
-// * Compression
-// ! HTTPS on dev
-// ? port Number
-// * Zero config
-// ?Tree Shaking -Removing un-wanted
-
-
-
-
-
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { jsx } from "react/jsx-runtime";
+import Footer from "./src/components/Footer";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
+// import  { createBrowserRouter, RouterProvider } from 'react-router-dom'
+// import { createBrowserRouter } from "react-router-dom";
+/*
+*Header
+logo
+navbar
 
-// React element
+?Body
+search
+resturant container
+resturant card
 
-// const heading = React.createElement(
-//     "h1",
-//     {
-//         id: "title",
-//     },
-//     "Namaste React"
-// );
-// console.log(heading);
+!Footer
+link
+address
+copyright
 
-// !JSX -: Html like syntax , javascript like syntax
-// ? JSX => react.createElement (object)=>ReactElement.js Object => HTMLElement(render)
-// * JSX (transpiled before it reaches the JS)
-
-const jsxheading = (
-  <h1 className="head" itemID="feel">
-    Namaste JSX React{" "}
-  </h1>
-);
-
-const HeadingComponent = () => {
+*/
+const AppLayout = () => {
   return (
-    <h1 className="functionalcomponent1">Namaste React functional component</h1>
+    <>
+      <Header />
+      <Body />
+      <Footer />
+    </>
   );
 };
-const feel=6789;
-const HeadingComponent2 = () => {
-  return <div id="container">
-    {jsxheading}
-    {feel} 
-    {console.log("hello world")}
-    <HeadingComponent /> 
-    {HeadingComponent()}
-    <h1 className="functionalcomponent2">
-      Namaste React functional component 2
-    </h1>
-  </div>;
-};
 
-// const srcimage=<img className="image" src=""></img>
-const root = ReactDOM.createRoot(document.getElementById("root"));
-// const soruce=[jsxheading,srcimage]
-root.render(<HeadingComponent2 />);
+
+
+const root = ReactDOM.createRoot(document.querySelector("#root"));
+root.render(<AppLayout />);
