@@ -7,7 +7,7 @@ const Header = () => {
     // ^if dependency array is provided, the effect will run only when the dependency changes
     // ^if dependency array is empty, the effect will run only once after the first render
     useEffect(()=>{
-      console.log("hello");
+      console.log("Changes in button");
     },[change]);
 
 

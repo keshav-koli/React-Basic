@@ -16,7 +16,7 @@ const Body = () => {
   useEffect(() => {
     fetch_data();
   }, []);
-  console.log("rendered");
+  // console.log("rendered");
 
   const fetch_data = async () => {
     const data = await fetch(
@@ -30,7 +30,7 @@ const Body = () => {
     setfilterRestaurantcard(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(json);
+    // console.log(json);
   };
   // Conditional rendering
   if (listRestaurantCard.length === 0) {
