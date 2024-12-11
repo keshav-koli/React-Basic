@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { navbar_logo } from "../utils/constant";
+import Contact from "./Contact";
 
 const Header = () => {
   var [change ,setchange]=useState("Login");
@@ -23,13 +25,13 @@ const Header = () => {
         <div className="Nav-Item">
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/About">About</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link to="/Contact" >Contact</Link>
             </li>
             <li>
               <a href="#">Services</a>

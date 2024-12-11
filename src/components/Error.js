@@ -8,7 +8,7 @@ const Error=()=>{
         <div className="error">
             <h1>404 Error</h1>
             <p>Sorry, the page you are looking for does not exist.</p>
-            <p>{err.error[0]}</p>
+            {/* <p>{err.error[0]}</p> */}
         </div>
     );
 };
