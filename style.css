@@ -91,7 +91,9 @@
   object-fit: cover;
   border-radius: 5px;
 }
-
+a {
+  text-decoration: none !important;
+}
 .star-image {
   height: 15px;
   width: auto;
@@ -101,6 +103,8 @@
 .res-details h3 {
   font-weight: 700;
   font-size: larger;
+  text-decoration-line: none;
+  text-decoration: none;
   margin: 10px 0;
 }
 
