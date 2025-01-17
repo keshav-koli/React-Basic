@@ -31,8 +31,8 @@ const ResturantMenu = () => {
   }
 
   //   const { name } = menuData?.cards[2]?.card?.card?.info; wrong way to access the data
-  const itemCards = menuData?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]?.card?.card?.categories?.[0]?.itemCards || [];
-  const { name, cuisines, costForTwoMessage } =
+  const itemCards = menuData?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]?.card?.card?.categories?.[0]?.itemCards || menuData?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]?.card?.card?.itemCards;
+  const { name, cuisines } =
     menuData.cards[2].card.card.info;
 
   // if (!itemCards) {

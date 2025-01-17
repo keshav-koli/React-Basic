@@ -31,7 +31,7 @@ const Body = () => {
     // console.log(json);
   };
   // Conditional rendering
-  if (listRestaurantCard.length === 0) {
+  if (!listRestaurantCard || listRestaurantCard.length === 0) {
     return <Shimer />;
   }
 
