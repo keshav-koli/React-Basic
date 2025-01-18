@@ -1,0 +1,244 @@
+/* Header Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 2px solid #333;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+}
+
+.logo {
+  width: 180px;
+}
+
+
+/* *===========================NAVBAR================================*/
+.Nav-Item {
+  padding: 20px;
+  margin: 20px;
+}
+
+.Nav-Item ul {
+  font-size: 24px;
+  display: flex;
+  list-style: none;
+}
+
+.Nav-Item li {
+  padding-left: 15px;
+}
+
+.Nav-Item li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.Nav-Item li a:hover {
+  color: #d7852d;
+}
+
+.login-btn{
+  background-color: #d7852d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* *===================Restaurant Card Styles=================================== */
+
+.resCard:hover {
+  border: 1px solid black;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background-color: #f8f8f8;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.resCard {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  background-color: #fff;
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin:1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.res-details {
+  padding: 5px;
+  margin: 10px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-image {
+  margin: 5px;
+  padding: 15px;
+  height: 220px;
+  width: 205;
+  object-fit: cover;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none !important;
+}
+.star-image {
+  height: 15px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.res-details h3 {
+  font-weight: 700;
+  font-size: larger;
+  text-decoration-line: none;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.res-details #rating {
+  font-weight: 600;
+  font-size: larger;
+  color: #d7852d;
+  display: flex;
+  align-items: center;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content:flex-start; */
+}
+
+/* *================Footer Styles=========================================== */
+
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-top: 2px solid #333;
+  margin-top: 20px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #d7852d;
+}
+
+
+/* *============================================================= */
+.filter-btn {
+    background-color: #d7852d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+.filter{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.filter div{
+  margin: 1rem;
+}
+.search-input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d7852d;
+  width: 300px;
+  margin-right: 1rem;
+}
+.search-btn{
+  background-color: #d7852d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* *========================Shimmer UI============================= */
+
+.shimer-container {
+    display: flex;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+.shimer{
+    margin: 22px;
+    padding: 30px;
+    width: 240px;
+    border-radius: 5px;
+    height: 400px;
+    background-color: #C2C2C2;
+}
+
+
+
+.menu-data-card{
+    display: flex;
+    flex-wrap: wrap; 
+    /* justify-content: space-evenly;*/
+    background-color: #C2C2C2;
+    margin: 1rem;
+    border: solid;
+}
+.menu-data-image{
+    margin: 5px;
+    padding: 15px;
+    height: 220px;
+    width: 205px;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+.resturant-menu{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    background-color: #fff;
+    padding: 10px;
+    width: 1350px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin:1rem 5rem;
+    list-style-type: none
+}
+.menu-data h4{
+    font-weight: 700;
+    width: 200px;
+    margin-left:5rem ;
+    padding-top: 8rem;
+    font-size: larger;
+    margin: 10px 0;
+}
+.menu-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}
+

@@ -1,30 +1,14 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { menu_food_api } from "../utils/constant";
 import { menu_food_img_id } from "../utils/constant";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const ResturantMenu = () => {
-  let [menuData, setmenuData] = useState(null);
-  useEffect(() => {
-    fetch_menu_data();
-  }, []);
 
   const { resid } = useParams();
   // console.log(resid)
 
-  const fetch_menu_data = async () => {
-    const data = await fetch(menu_food_api + resid);
-    const json = await data.json();
-    setmenuData(json.data);
-    // console.log(json.data);
-    console.log(
-      json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[4].card.card
-    );
-
-    // console.log(json.data.cards[2].card.card.info);
-    // console.log(menuData?.cards[2]?.card?.card?.info?.name);
-  };
+  const menuData=useRestaurantMenu(resid);
 
   if (!menuData) {
     return <h2>Loading.......</h2>;
@@ -70,7 +54,7 @@ const ResturantMenu = () => {
       </div>
     </div>
   );
-};
+}
 
 
 export default ResturantMenu;
