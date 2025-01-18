@@ -11,7 +11,7 @@ const ResturantMenu = () => {
   const menuData=useRestaurantMenu(resid);
 
   if (!menuData) {
-    return <h2>Loading.......</h2>;
+    return <h2 className="loading-nenu-data">Loading.......</h2>;
   }
 
   //   const { name } = menuData?.cards[2]?.card?.card?.info; wrong way to access the data

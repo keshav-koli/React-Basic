@@ -499,3 +499,18 @@ a:hover {
   text-align: center;
   font-weight: 500;
 }
+
+
+.loading-nenu-data{
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; */
+  margin: 250px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+
+}

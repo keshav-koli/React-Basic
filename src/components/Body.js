@@ -3,6 +3,7 @@ import ResturantContainer from "./ResturantContainer";
 import { useEffect, useState } from "react";
 import Shimer from "./Shimer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 const Body = () => {
   // whenever state variable updates ,react trigger the reconcilation  (re-render the component)
   let [listRestaurantCard, setlistRestaurantcard] = useState([]);
@@ -17,6 +18,12 @@ const Body = () => {
   }, []);
   // console.log("rendered");
 
+  let Status=useOnlineStatus();
+  if(Status===false){
+    return(
+    <h1>Please check your internet connection !!</h1>
+    )
+  }
   const fetch_data = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65420&lng=77.23730&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -35,6 +42,7 @@ const Body = () => {
     return <Shimer />;
   }
 
+ 
   return (
     <div className="Card">
       <div className="filter">

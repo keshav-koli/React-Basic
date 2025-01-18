@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { navbar_logo } from "../utils/constant";
 import Contact from "./Contact";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   var [change ,setchange]=useState("Login");
@@ -24,6 +25,9 @@ const Header = () => {
         </div>
         <div className="Nav-Item">
           <ul>
+            <li>
+              Status {useOnlineStatus()?"✅":"❌"}
+            </li>
             <li>
               <Link to="/">Home</Link>
             </li>
