@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { navbar_logo } from "../utils/constant";
-import Contact from "./Contact";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
@@ -36,6 +35,9 @@ const Header = () => {
             </li>
             <li>
               <Link to="/Contact" >Contact</Link>
+            </li>
+            <li>
+              <Link to="/Grocery">Grocery</Link>
             </li>
             <li>
               <a href="#">Services</a>
