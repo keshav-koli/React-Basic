@@ -15,34 +15,34 @@ const Header = () => {
 
 
     return (
-      <div className="header">
+      <div className="header flex justify-between items-center sticky top-0 bg-white p-2.5 shadow-md z-10">
         <div className="logo-container">
           <img
-            className="logo"
+            className="logo h-18 mr-2.5"
             src={navbar_logo}
           />
         </div>
-        <div className="Nav-Item">
-          <ul>
-            <li>
+        <div className="Nav-Item flex">
+          <ul className="flex ">
+            <li className="px-2.5">
               Status {useOnlineStatus()?"✅":"❌"}
             </li>
-            <li>
+            <li className="px-2.5">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="px-2.5">
               <Link to="/About">About</Link>
             </li>
-            <li>
+            <li className="px-2.5">
               <Link to="/Contact" >Contact</Link>
             </li>
-            <li>
+            <li className="px-2.5">
               <Link to="/Grocery">Grocery</Link>
             </li>
-            <li>
+            <li className="px-2.5">
               <a href="#">Services</a>
               </li>
-              <li>
+              <li className="px-3.5 border bg-amber-300 rounded-lg text-white h-7 w-19 hover:bg-amber-500">
                 <button onClick={
                   () => {
                     if(change==="Login"){
@@ -52,7 +52,7 @@ const Header = () => {
                       setchange("Login")
                     }
                   }
-                }  className="login-btn">{change}</button>
+                }  className="login-btn ">{change}</button>
               </li>
           </ul>
         </div>
