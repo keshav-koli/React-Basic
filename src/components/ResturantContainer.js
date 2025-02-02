@@ -6,13 +6,13 @@ const ResturantContainer = (props) => {
   const { cloudinaryImageId, name, avgRating, locality, cuisines, costForTwo } =
     resObj?.info;
   return (
-    <div className="resCard border-0.1 pt-1 h-96 w-64 m-3.5 shadow-xl rounded-lg bg-gray-100 hover:bg-gray-200 hover:translate-1 hover:z-2 ">
+    <div className="resCard border-0.1 pt-1 h-96 w-64 m-3.5 shadow-xl rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-200 hover:scale-105 hover:z-2 ">
       <img className="res-image rounded-lg ml-5 my-3 w-54 h-50 " src={ food_imageCDN  + cloudinaryImageId} />
       <div className="res-details ml-5  ">
         <h3 className="text-lg font-bold">{name}</h3>
         <p id="rating " className="flex items-center">
           <img src={star} alt="rating" className="star-image w-4 mr-1"></img>
-          <p className="flex items-center  w-38 text-amber-400 font-medium">{avgRating } <h6 className=" ml-24 text-black font-normal">• {resObj.info.sla.deliveryTime}</h6></p>
+          <p className="flex items-center  w-38 text-amber-400 font-medium">{avgRating } <h6 className=" ml-[100px] text-black font-normal">• {resObj.info.sla.deliveryTime}</h6></p>
           mins
         </p>
         {/* <p id="rating">
