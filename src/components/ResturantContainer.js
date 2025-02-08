@@ -6,7 +6,7 @@ const ResturantContainer = (props) => {
   const { cloudinaryImageId, name, avgRating, locality, cuisines, costForTwo } =
     resObj?.info;
   return (
-    <div className="resCard border-0.1 pt-1 h-96 w-64 m-3.5 shadow-xl rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-200 hover:scale-105 hover:z-2 ">
+    <div className="resCard border-0.1 pt-1 h-96 w-64 m-3.5 shadow-xl rounded-lg bg-gray-100 hover:bg-gray-200  hover:border transition duration-200 hover:scale-105 hover:z-2 ">
       <img className="res-image rounded-lg ml-5 my-3 w-54 h-50 " src={ food_imageCDN  + cloudinaryImageId} />
       <div className="res-details ml-5  ">
         <h3 className="text-lg font-bold">{name}</h3>
@@ -27,4 +27,16 @@ const ResturantContainer = (props) => {
     </div>
   );
 };
+export const withPromptedResturantContainer=(ResturantContainer)=>{
+  return(props)=>{
+    return(
+      <div className="">
+        <label className=" absolute p-1 bg-black text-white rounded text text-xs  z-3">Prompted</label>
+        <ResturantContainer {...props}/>
+      </div>
+    )
+  }
+}
+
+
 export default ResturantContainer;

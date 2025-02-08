@@ -1,4 +1,4 @@
-import ResturantContainer from "./ResturantContainer";
+import ResturantContainer,{withPromptedResturantContainer} from "./ResturantContainer";
 // import { resList } from "../utils/MockData";//no need of this
 import { useEffect, useState } from "react";
 import Shimer from "./Shimer";
@@ -12,6 +12,7 @@ const Body = () => {
   // * don't use UseState hook inside loop or conditional statement or function
 
   const [search, setSearch] = useState("");
+  const RestaurantCardPrompted=withPromptedResturantContainer(ResturantContainer);
 
   useEffect(() => {
     fetch_data();
@@ -89,7 +90,8 @@ const Body = () => {
             key={resturant.info.id}
             to={"/resturantMenu/" + resturant.info.id}
           >
-            <ResturantContainer resObj={resturant} />
+            {resturant.info.totalRatingsString>150?(<RestaurantCardPrompted resObj={resturant} />):
+            (<ResturantContainer resObj={resturant} />)}
           </Link>
         ))}
       </div>
