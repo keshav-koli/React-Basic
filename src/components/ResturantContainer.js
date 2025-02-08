@@ -10,11 +10,11 @@ const ResturantContainer = (props) => {
       <img className="res-image rounded-lg ml-5 my-3 w-54 h-50 " src={ food_imageCDN  + cloudinaryImageId} />
       <div className="res-details ml-5  ">
         <h3 className="text-lg font-bold">{name}</h3>
-        <p id="rating " className="flex items-center">
+        <div id="rating " className="flex items-center">
           <img src={star} alt="rating" className="star-image w-4 mr-1"></img>
-          <p className="flex items-center  w-38 text-amber-400 font-medium">{avgRating } <h6 className=" ml-[100px] text-black font-normal">• {resObj.info.sla.deliveryTime}</h6></p>
+          <span className="flex items-center  w-38 text-amber-400 font-medium">{avgRating } <span className=" ml-[100px] text-black font-normal">• {resObj.info.sla.deliveryTime}</span></span>
           mins
-        </p>
+        </div>
         {/* <p id="rating">
           <img src={star} alt="rating" className="star-image"></img>
           {avgRating} • {resObj.info.sla.deliveryTime} 

@@ -42,7 +42,7 @@ const Header = () => {
             <li className="px-2.5">
               <a href="#">Services</a>
               </li>
-              <li className="px-3.5 border bg-amber-300 rounded-lg text-white h-7 w-19 hover:bg-amber-500">
+              <li className="px-3.5 border bg-amber-300 rounded-lg text-white h-7 w-19  transition-transform  duration-100 ease hover:bg-amber-500 hover:translate-y-0.5 active:translate-y-0 ">
                 <button onClick={
                   () => {
                     if(change==="Login"){
