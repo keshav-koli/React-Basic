@@ -11,7 +11,7 @@ const useRestaurantMenu = (resid) => {
     const data = await fetch(menu_food_api + resid);
     const json = await data.json();
     setmenuData(json.data);
-    console.log(json.data);
+    // console.log(json.data);
     // console.log(
     //   json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[4].card.card
     // );
