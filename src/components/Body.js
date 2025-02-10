@@ -36,7 +36,7 @@ const Body = () => {
     setfilterRestaurantcard(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    console.log(json.data);
+    // console.log(json.data);
   };
   // Conditional rendering
   if (!listRestaurantCard || listRestaurantCard.length === 0) {

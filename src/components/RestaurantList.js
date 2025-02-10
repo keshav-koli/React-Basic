@@ -2,14 +2,13 @@ import React from "react";
 import { menu_food_img_id } from "../utils/constant";
 
 const RestaurantList = ({ items }) => {
-  console.log(items);
+  // console.log(items);
 
   return (
     <div>
-      {items.map((item, key) => (
-        <div key={item?.card?.card?.id}>
+      {items.map((item) => (
+        <div key={item?.card?.info?.id}>
           <div
-            key={item.card.info.id}
             className="menu-data-card my-6 flex transform hover:scale-105 transition duration-100 bg-gray-100 hover:cursor-pointer "
           >
             <div className=" w-8/12 h-auto p-2 border-b-2  ">

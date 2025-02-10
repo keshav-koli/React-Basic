@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { menu_food_img_id } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -10,6 +10,8 @@ const ResturantMenu = () => {
 
   const menuData = useRestaurantMenu(resid);
   // console.log( menuData?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+
+  const [ShowIndex,setShowIndex]=useState(null);
 
   if (!menuData) {
     return (
@@ -35,7 +37,7 @@ const ResturantMenu = () => {
       c.card?.card?.["@type"] ==
       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
-  console.log(filtered_categories);
+  // console.log(filtered_categories);
   // if (!itemCards) {
   //   menuData.map((resinfo) => {
   //     resinfo.data.card[4].groupedCard.cardGroupMap.REGULAR.cards[4].card.card.categories[0].itemCards.map(
@@ -68,8 +70,13 @@ const ResturantMenu = () => {
         </div>
       ))}
     </div> */}
-      {filtered_categories.map((item) => (
-        <RestaurantMenuList resObj={item.card.card} />
+      {filtered_categories.map((item ,index) => (
+        <RestaurantMenuList resObj={item.card.card} key={item.card.card.title} 
+        showItem={index==ShowIndex?true:false}
+        setShowIndex={()=>{
+          setShowIndex(index)
+        }}
+        />
       ))}
     </div>
   );
