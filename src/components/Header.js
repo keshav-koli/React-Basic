@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { navbar_logo } from "../utils/constant";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
+  const data=useContext(UserContext);
   var [change ,setchange]=useState("Login");
     // ^if no dependency array  is provided, the effect will run after every render
     // ^if dependency array is provided, the effect will run only when the dependency changes
@@ -54,6 +56,7 @@ const Header = () => {
                   }
                 }  className="login-btn ">{change}</button>
               </li>
+              <li className="mx-2">{data.loggedUser}</li>
           </ul>
         </div>
       </div>

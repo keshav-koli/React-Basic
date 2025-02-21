@@ -1,6 +1,10 @@
 import  food_imageCDN  from "../utils/constant";
 import star from "../../item/star.png";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const ResturantContainer = (props) => {
+  const data=useContext(UserContext);
+
   // Destructuring of the object
   const { resObj } = props;
   const { cloudinaryImageId, name, avgRating, locality, cuisines, costForTwo } =
@@ -23,6 +27,8 @@ const ResturantContainer = (props) => {
         <p>{locality}</p>
         <p className="cuisines line-clamp-1 w-50 text-ellipsis ">{cuisines.join(",")}</p>
         <p>{costForTwo}</p>
+        {/* Context data */}
+        <p>{data.loggedUser}</p>
       </div>
     </div>
   );

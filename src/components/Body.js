@@ -1,29 +1,32 @@
-import ResturantContainer,{withPromptedResturantContainer} from "./ResturantContainer";
+import ResturantContainer, {
+  withPromptedResturantContainer,
+} from "./ResturantContainer";
 // import { resList } from "../utils/MockData";//no need of this
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimer from "./Shimer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+import UserContext from "../utils/UserContext.js";
 const Body = () => {
   // whenever state variable updates ,react trigger the reconcilation  (re-render the component)
   let [listRestaurantCard, setlistRestaurantcard] = useState([]);
   let [filterRestaurantCard, setfilterRestaurantcard] = useState([]);
   // * Use UseState at top of the component
   // * don't use UseState hook inside loop or conditional statement or function
-
+  
   const [search, setSearch] = useState("");
-  const RestaurantCardPrompted=withPromptedResturantContainer(ResturantContainer);
-
+  const RestaurantCardPrompted =withPromptedResturantContainer(ResturantContainer);
+  //User Name
+  const { setUserName, loggedUser } = useContext(UserContext);
+  
   useEffect(() => {
     fetch_data();
   }, []);
   // console.log("rendered");
-
-  let Status=useOnlineStatus();
-  if(Status===false){
-    return(
-    <h1>Please check your internet connection !!</h1>
-    )
+  
+  let Status = useOnlineStatus();
+  if (Status === false) {
+    return <h1>Please check your internet connection !!</h1>;
   }
   const fetch_data = async () => {
     const data = await fetch(
@@ -43,7 +46,6 @@ const Body = () => {
     return <Shimer />;
   }
 
- 
   return (
     <div className="Card ">
       <div className="filter flex">
@@ -71,17 +73,26 @@ const Body = () => {
           </button>
         </div>
         <div className="border-2 h-10 m-5 rounded-2xl w-50 border-red-300 text-white bg-amber-400 pl-4 pt-1.5 hover:bg-amber-500">
-        <button
-          onClick={() => {
-            const filter_restaurant = listRestaurantCard.filter(
-              (resturant) => resturant.info.avgRating > 4.5
-            );
-            setfilterRestaurantcard(filter_restaurant);
-          }}
-          className="filter-btn"
-        >
-          Top Rated Restaurant
-        </button>
+          <button
+            onClick={() => {
+              const filter_restaurant = listRestaurantCard.filter(
+                (resturant) => resturant.info.avgRating > 4.5
+              );
+              setfilterRestaurantcard(filter_restaurant);
+            }}
+            className="filter-btn"
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
+        <div className="search-name">
+          <label>Enter name</label>
+          <input
+            type="text"
+            className="border h-10 ml-2 my-5 rounded-lg p-2 w-60 border-amber-500"
+            value={loggedUser}
+            onChange={(e) => setUserName(e.target.value)}
+          ></input>
         </div>
       </div>
       <div className="res-container flex flex-wrap ml-20">
@@ -90,8 +101,11 @@ const Body = () => {
             key={resturant.info.id}
             to={"/resturantMenu/" + resturant.info.id}
           >
-            {resturant.info.totalRatingsString>150?(<RestaurantCardPrompted resObj={resturant} />):
-            (<ResturantContainer resObj={resturant} />)}
+            {resturant.info.totalRatingsString > 150 ? (
+              <RestaurantCardPrompted resObj={resturant} />
+            ) : (
+              <ResturantContainer resObj={resturant} />
+            )}
           </Link>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { menu_food_img_id } from "../utils/constant";
+// import { menu_food_img_id } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantMenuList from "./RestaurantMenuList";
 
@@ -70,12 +70,12 @@ const ResturantMenu = () => {
         </div>
       ))}
     </div> */}
+    {/* categories Accordions */}
       {filtered_categories.map((item ,index) => (
+        // controlled component
         <RestaurantMenuList resObj={item.card.card} key={item.card.card.title} 
         showItem={index==ShowIndex?true:false}
-        setShowIndex={()=>{
-          setShowIndex(index)
-        }}
+        setShowIndex={()=>setShowIndex(index)}
         />
       ))}
     </div>
