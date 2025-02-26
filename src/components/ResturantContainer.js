@@ -28,7 +28,7 @@ const ResturantContainer = (props) => {
         <p className="cuisines line-clamp-1 w-50 text-ellipsis ">{cuisines.join(",")}</p>
         <p>{costForTwo}</p>
         {/* Context data */}
-        <p>{data.loggedUser}</p>
+        {/* <p>{data.loggedUser}</p> */}
       </div>
     </div>
   );

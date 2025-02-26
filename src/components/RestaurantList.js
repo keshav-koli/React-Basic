@@ -1,37 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
 import { menu_food_img_id } from "../utils/constant";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
+
+// Placeholder image if no image is available
+const placeholderImage = "https://via.placeholder.com/150?text=No+Image";
 
 const RestaurantList = ({ items }) => {
-  // console.log(items);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.item);
+
+  // Function to check quantity of an item in the cart
+  const getItemQuantity = (id) => {
+    const item = cartItems.find((cartItem) => cartItem.card.info.id === id);
+    return item ? item.quantity : 0;
+  };
 
   return (
-    <div>
-      {items.map((item) => (
-        <div key={item?.card?.info?.id}>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+      {items.map((item) => {
+        const [showFullDescription, setShowFullDescription] = useState(false);
+        const description = item?.card?.info?.description || "No description available";
+        const shortDescription =
+          description.length > 100 ? `${description.substring(0, 100)}...` : description;
+
+        const quantity = getItemQuantity(item.card.info.id);
+
+        return (
           <div
-            className="menu-data-card my-6 flex transform hover:scale-105 transition duration-100 bg-gray-100 hover:cursor-pointer "
+            key={item?.card?.info?.id}
+            className="p-4 rounded-lg shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 bg-white flex flex-col items-center"
           >
-            <div className=" w-8/12 h-auto p-2 border-b-2  ">
-              <h4 className="font-bold  ">
-                {item.card.info.name}
-                {" - Rs "}
-                {item.card.info.finalPrice / 100 ||
-                  item.card.info.price / 100 ||
-                  item.card.info.defaultPrice / 100}
-              </h4>
-              <p className="w-10/12 ">{item?.card?.info?.description}</p>
-            </div>
-            <div className="w-4/12 h-52 ">
-            <button className="absolute bg-black text-white px-2 py-1  rounded text-sm top-45 left-176 cursor-pointer">Add +</button>
-              <img
-                className="menu-data-image h-52 w-full rounded"
-                src={menu_food_img_id.concat(item?.card?.info?.imageId)}
-                alt={item.card.info.name}
-              />
+            {/* Menu Item Image with Fallback */}
+            <img
+              className="w-40 h-40 object-cover rounded-md mb-2"
+              src={item?.card?.info?.imageId ? menu_food_img_id + item.card.info.imageId : placeholderImage}
+              alt={item.card.info.name}
+            />
+
+            {/* Item Name */}
+            <h4 className="text-lg font-semibold">{item.card.info.name}</h4>
+
+            {/* Description with Read More / Read Less Toggle */}
+            <p className="text-gray-600 text-sm mt-1">
+              {showFullDescription ? description : shortDescription}
+              {description.length > 100 && (
+                <span
+                  className="text-blue-500 cursor-pointer ml-1"
+                  onClick={() => setShowFullDescription(!showFullDescription)}
+                >
+                  {showFullDescription ? " Read Less" : " Read More"}
+                </span>
+              )}
+            </p>
+
+            {/* Price & Add/Remove Buttons */}
+            <div className="flex justify-between w-full mt-2">
+              <span className="text-green-600 font-bold text-lg">
+                Rs {item.card.info.finalPrice / 100 || item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+              </span>
+
+              {/* Add/Remove Buttons */}
+              {quantity > 0 ? (
+                <div className="flex items-center">
+                  <button
+                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
+                    onClick={() => dispatch(removeItem(item.card.info.id))}
+                  >
+                    -
+                  </button>
+                  <span className="mx-3 font-bold">{quantity}</span>
+                  <button
+                    className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition cursor-pointer"
+                    onClick={() => dispatch(addItem(item))}
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                <button
+                  className="bg-orange-500 text-white px-3 py-1 rounded hover:bg-orange-600 transition cursor-pointer"
+                  onClick={() => dispatch(addItem(item))}
+                >
+                  Add +
+                </button>
+              )}
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

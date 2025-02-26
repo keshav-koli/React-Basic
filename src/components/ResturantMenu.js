@@ -49,7 +49,7 @@ const ResturantMenu = () => {
   // }
   // const Restaurant_Menu_List = RestaurantMenuList(itemCards);
   return (
-    <div className="resturant-menu flex flex-col items-center">
+    <div className="resturant-menu flex flex-col items-center min-h-[520px]">
       <h1 className="font-bold text-3xl my-8">{name}</h1>
       <h3 className="font-medium text-xl m-2">{cuisines.join(", ")}</h3>
       {/* <div className="menu-data  flex flex-wrap m-2.5 p-2 bg-gray-100 justify-start">
