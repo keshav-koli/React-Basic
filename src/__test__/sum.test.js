@@ -9,27 +9,29 @@ test("Sum function should calculate the sum of two numbers", () => {
   expect(result).toBe(7);
 });
 
-test("containing heading in the grocery  ", () => {
-  render(<Grocery />);
+describe("Grocery Page", () => {
+  test("should contain heading in the grocery  ", () => {
+    render(<Grocery />);
 
-  //Querying
-  const heading = screen.getByRole("heading");
+    //Querying
+    const heading = screen.getByRole("heading");
 
-  expect(heading).toBeInTheDocument();
-});
+    expect(heading).toBeInTheDocument();
+  });
+  //when can write test ot it
+  it("should contain button in the grocery", () => {
+    render(<Grocery />);
+    const btn = screen.getByText("Submit");
 
-test("containing button in the grocery", () => {
-  render(<Grocery />);
-  const btn = screen.getByText("Submit");
+    //assertion
+    expect(btn).toBeInTheDocument();
+  });
 
-  //assertion
-  expect(btn).toBeInTheDocument();
-});
-
-test("contain 2 input tag", () => {
-  render(<Grocery />);
-  const input = screen.getAllByRole("textbox");
-  console.log(input.length)
-  // expect(input.length).toBe(2)
-  expect(input.length).not.toBe(3)
+  test("should contain 2 input tag", () => {
+    render(<Grocery />);
+    const input = screen.getAllByRole("textbox");
+    console.log(input.length);
+    // expect(input.length).toBe(2)
+    expect(input.length).not.toBe(3);
+  });
 });
